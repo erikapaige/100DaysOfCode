@@ -1,0 +1,49 @@
+h1 {
+  color: rgba(253, 156, 117, 0.979);
+  font-size: 100px;
+  margin: 0px;
+  text-align: center;
+}
+
+.textColor {
+  color: rgb(95, 80, 117);
+}
+
+#adjustMargins {
+  margin-left: 22px;
+}
+
+ul {
+  margin-top: 2px;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+input {
+  margin-bottom: 16px;
+}
+
+img {
+  height: 300px;
+  width: 500px;
+  margin-bottom: 16px;
+}
+
+.myDiv {
+  background-color: red;
+  height: 200px;
+  width: 250px;
+  margin-bottom: 16p;
+  display: inline-block;
+}
+
+.divImg {
+  width: 100%;
+  height: 500px;
+  margin: auto;
+  background-image: url('https://wallpaperaccess.com/full/1321366.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
