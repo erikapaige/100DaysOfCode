@@ -1,4 +1,12 @@
+/* -- Body Reset -- */
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
 /*-- Bootstrap Mobile Gutter Fix --*/
+
 .row, .container-fluid {
   margin-left: 0px !important;
   margin-right: 0px !important;
