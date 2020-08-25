@@ -1,12 +1,75 @@
 /* -- Body Reset -- */
 
+h1 {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif !important;
+  color: #2b2b2b!important;
+}
+
 body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
+  color: #636363;
 }
 
-/*-- Two Column Section --*/
+/*-- Main Page Heading  --*/
 
+h1 {
+  size: 16rem!important;
+}
+
+.border-top {
+  color: rgba(177, 103, 206, 0.548)!important;
+}
+
+/*-- Toggle Navbar --*/
+
+.old {
+  background-image: linear-gradient(to right, rgba(247, 141, 92, 0.795), rgba(177, 103, 206, 0.548));
+  color: white;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+/*-- Footer --*/
+
+footer {
+  background-color: #383838;
+  padding: 1rem 2rem 3rem;
+}
+
+footer p, footer a {
+  color: white;
+  text-decoration: none;
+}
+
+ul.social {
+  list-style-type: none;
+  display: flex;
+  max-width: 16rem;
+  padding: 0;
+  margin: 0 auto;
+}
+
+ul.social li {
+  margin: 0 auto;
+  padding: 0;
+}
+
+footer .svg-inline--fa {
+  font-size: 4.3rem;
+}
+
+footer.sv-inline--fa:hover {
+  color: rgba(177, 103, 206, 0.548)!important;
+}
+
+/*============= SOCKET =============*/
+
+.socket {
+  background-color: #222222;
+  border-top: .1rem solid #4981b3;
+}
 
 /*-- Bootstrap Mobile Gutter Fix --*/
 
