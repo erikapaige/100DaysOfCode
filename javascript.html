@@ -78,7 +78,80 @@
 
   <!-- Start Javascript Code -->
   <script>
-    
+    const hotdog = 'something'
+    const something = 'hotdog'
+
+    let name = 'John Doe'
+    let email = 'johndoe@gmail.com'
+
+    // console.log will show value of variable, not variable itself
+    console.log(hotdog) //will show variable hotdog
+    console.log('hotdog') //will show string hotdog
+
+    let a = 5
+    let b = 7
+    console.log(a+b)
+
+    // alert('WARNING!')
+    // let valueA = prompt('What would you like to do?') //user input
+    // console.log(valueA) // get input in console
+    // let value = confirm('Are you sure?') //get an ok or cancel, give value
+    // console.log(value) // get true or false in console
+
+    // activity, prompt information from user and alert all information at once
+    // let nombre = prompt('What is your name?')
+    // let age = prompt('What is your age?')
+    // let city = prompt('Where do you live?')
+    // console.log(name, age, city)
+    // alert(
+    //   `Name: ${nombre}
+    //   Age: ${age}
+    //   Location: ${city}`
+    //   )
+
+    //checking multiple conditional statements
+    // let bool = true
+    // let str = 'hello'
+
+    // if (bool === true && str === 'hello'){
+    //   console.log('hello there')
+    // } else if (str === 'good morning') {
+    //   console.log('GOOD MORNING')
+    // } else {
+    //   console.log('goodbye')
+    // }
+
+    //calculator
+    let c = parseInt(prompt('What is the first number?'))
+    let d = parseInt(prompt('What is the second number?'))
+    let op = prompt('What is the operator?')
+
+    // using conditional logic
+    if (op === 'add'){
+      alert(c + d)
+    } else if (op === 'subtract'){
+      alert(c - d)
+    } else if (op === 'multiply'){
+      alert(c * d)
+    } else if (op === 'divide'){
+      alert (c / d)
+    }
+    // rewriting calculator with switchcase
+    switch (op) {
+      case 'add':
+        alert (c + d)
+        break
+      case 'subtract':
+        alert(c - d)
+        break
+      case 'multiply':
+        alert(c * d)
+        break
+      case 'divide':
+        alert(c / d)
+        break
+    }
+
   </script>
   <!-- End Javascript Code -->
 
