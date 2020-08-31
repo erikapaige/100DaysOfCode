@@ -1,3 +1,4 @@
-.btn-primary:hover{
-  background-color: red;
+.btn-primary:hover {
+  background-color: rgba(177, 103, 206, 0.548);
+  border: .05rem solid rgba(177, 103, 206, 0.548)!important;
 }
