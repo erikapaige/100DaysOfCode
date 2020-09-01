@@ -7,6 +7,72 @@
 </head>
 <body>
   
-  
+  <!-- Input -->
+  <form>
+    <p>
+      <label for="name"></label>
+      <input type="name" name="name" id="name">
+    </p>
+    <p>
+      <button id="addItem">Add Item</button>
+    </p>
+  </form>
+
+  <!-- Div For Items To Go -->
+  <ul id="items"></ul>
+
+  <!-- Script Tags -->
+  <script>
+
+    // array on item
+    const items = [
+      {
+        text: 'wash dishes',
+        isDone: true,
+      },
+      {
+        text: 'make the bed',
+        isDone: true,
+      },
+      {
+        text: 'grocery shop',
+        isDone: false,
+      },
+      {
+        text: 'take out the trash',
+        isDone: false,
+      },
+      {
+        text: 'walk the dog',
+        isDone: true,
+      },
+    ]
+
+    // view items
+      // function that renders items
+      const renderItems = () => {
+        for(let i =0; i < items.length; i++){
+          console.log(items[i])
+
+          // make the list item
+          let itemElem = document.createElement('li')
+          // want item at index i text property
+          itemElem.textContent = items[i].text
+          // put items into items ul list
+          document.getElementById('items').append(itemElem)
+        }
+      }
+    // add an item to the list
+
+    // mark an item as complete or incomplete
+
+    // remove an item from the list
+
+      renderItems()
+
+    
+
+  </script>
+
 </body>
 </html>
