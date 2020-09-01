@@ -4,13 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To Do List</title>
-  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet">
+  <!-- Font Awesome (used for icons)-->
+  <script src="https://kit.fontawesome.com/bc8806cb40.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  
-  <!-- Input -->
+
+  <!-- Start Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="./index.html">100 Days of Code</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="./weekOne.html">Week 1</a>
+        <a class="nav-link" href="./meidaQ.html">Media Queries</a>
+        <a class="nav-link" href="./javascript.html">JS: Timed Quiz</a>
+        <a class="nav-link" href="./javascriptToDo.html">To Do List App</a>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+
+  <!-- To Do List Application -->
   <div class="container">
 
     <!-- Row For Form -->
@@ -31,14 +54,61 @@
       <ul class="list-group" id="items"></ul>
     </div>
   </div>
+  <!-- End of To List Application -->
 
-  <!-- Bootstrap CDN -->
+
+  <!-- Start Footer -->
+  <footer class="mb-0 mt-4">
+    <div class="container">
+  
+      <div class="row text-light text-center py-4 justify-content-center">
+        <div class="col-sm-10 col-md-8 col-lg-6">
+          <ul class="social pt-3">
+            <li>
+              <a href="https://github.com/erikapaige" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/erikapaige/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/erikapaigestyle" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/erikapaigestyle/" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="row text-light text-center justify-content-center">
+        <div class="col-sm-10 col-md-8 col-lg-6">
+          <p>&copy; <a href="#" target="_blank">www.portfolio.com</a></p>
+        </div>
+      </div>
+  
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+
+  <!-- Start Footer Script Source Files -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="js/all.min.js"></script>
+
 
   <!-- Script Tags -->
   <script>
@@ -81,8 +151,14 @@
           itemElem.classList.add('list-group-item')
           //conditional check if item is done (if items @ index[i] is done is true than add success class, if false add secondary)
           itemElem.classList.add(items[i].isDone ? 'list-group-item-success' : 'list-group-item-secondary')
+          // add bootstrap classes to make button clickable
+          itemElem.classList.add('d-flex', 'justify-content-between', 'align-items-center')
           // want item at index i text property
-          itemElem.textContent = items[i].text
+          itemElem.innerHTML = `
+            ${items[i].text}
+            <button class="btn btn-warning markDone" data-index="${i}">✓</button>
+            <button class="btn btn-danger">X</button>
+          `
           // put items into items ul list
           document.getElementById('items').append(itemElem)
         }
@@ -99,6 +175,14 @@
       text: document.getElementById('item').value = ''
     }
     
+    // get index of item from data-set="index"
+    const markDone = (index) => {
+      // index of item marking as done
+      // do NOT need to know value just want it to be opposite of what it is
+      items[index].isDone = !items[index].isDone
+      renderItems()
+    }
+
     document.getElementById('addItem').addEventListener('click', (event) =>{
       event.preventDefault()
       // console.log('ping')
@@ -107,9 +191,21 @@
       addItem()
     })
 
+    document.addEventListener('click', (event) => {
+      // contains lets us check to see if a class list contins the class list 'mark done'
+      // console.log(event.target.classList.contains('markDone'))
+
+      // 
+      if (event.target.classList.contains('markDone')) {
+        // console.log(event.target.dataset.index)
+        markDone(event.target.dataset.index)
+      }
+    })
+
     renderItems()
 
     // mark an item as complete or incomplete
+
 
     // remove an item from the list
 
