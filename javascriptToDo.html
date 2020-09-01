@@ -28,7 +28,7 @@
 
     <!-- Row For List Items -->
     <div class="row">
-      <ul id="items"></ul>
+      <ul class="list-group" id="items"></ul>
     </div>
   </div>
 
@@ -47,7 +47,7 @@
     const items = [
       {
         text: 'wash dishes',
-        isDone: false,
+        isDone: true,
       },
       {
         text: 'make the bed',
@@ -55,7 +55,7 @@
       },
       {
         text: 'grocery shop',
-        isDone: false,
+        isDone: true,
       },
       {
         text: 'take out the trash',
@@ -72,17 +72,20 @@
       const renderItems = () => {
         // grab list and remove everything then  re-render
         document.getElementById('items').innerHTML = ''
-        for(let i =0; i < items.length; i++){
-          console.log(items[i])
+        for(let i = 0; i < items.length; i++) {
+          // console.log(items[i])
 
           // make the list item
           let itemElem = document.createElement('li')
+          // add multiple bootstrap classes by using 'classList' 
+          itemElem.classList.add('list-group-item')
+          //conditional check if item is done (if items @ index[i] is done is true than add success class, if false add secondary)
+          itemElem.classList.add(items[i].isDone ? 'list-group-item-success' : 'list-group-item-secondary')
           // want item at index i text property
           itemElem.textContent = items[i].text
           // put items into items ul list
           document.getElementById('items').append(itemElem)
         }
-
       }
 
     // add an item function
