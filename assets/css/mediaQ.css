@@ -1,25 +1,39 @@
-.myDiv{
+.myDiv {
   width: 300px;
   height: 300px;
   background-color: rgba(14, 118, 216, 0.856);
 }
 
 @media screen and (max-width: 1000px) {
-  .myDiv{
+  .myDiv {
     width: 150px;
     height: 150px;
     background-color: rgba(228, 109, 133, 0.938);
   }
 }
 
-.mountains{
+.mountains {
   width: 1000px;
   height: 665px;
 }
 
-@media screen and (max-width: 576px){
-  .mountains{
+@media screen and (max-width: 576px) {
+  .mountains {
     width: 500px;
     height: 332.5px;
+  }
+}
+
+/*--- Responsive Columns Without Bootstrap ---*/
+.one-third {
+  width: 33%;
+  height: 5rem;
+  background-color: salmon;
+  display: inline-block
+}
+
+@media (max-width: 992px){
+  .one-third{
+    width: 100%;
   }
 }
