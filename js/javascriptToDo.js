@@ -1,3 +1,22 @@
+// ==== FUNCTIONS FOR FORM / USER NAME ==== //
+document.getElementById('submit').addEventListener('click', (event) => {
+  event.preventDefault()
+  // set item in local storage, set item called name to be the value of the input
+  localStorage.setItem('name', document.getElementById('name').value)
+  // how to get name to refresh without having to hit the button use input value
+  document.getElementById('greeting').textContent = `${document.getElementById('name').value}'s To Do List`
+  document.getElementById('name').value = ''
+})
+
+//UPON PAGE LOAD, check to see if there is value before setting text content
+// if localStorage with key of name exists run function, if not leave blank
+if (localStorage.getItem('name')) {
+  document.getElementById('greeting').textContent = `${localStorage.getItem('name')}'s To Do List`
+}
+
+
+
+// ==== FUNCTIONS FOR TO DO LIST ==== //
 // array on item
 const items = [
   {
@@ -68,7 +87,7 @@ const markDone = (index) => {
   renderItems()
 }
 
-// remove item funciton
+// remove item function
 const removeItem = (index) => {
   // use splice method to remove a quantity of elements at a certain index
   items.splice(index, 1)
@@ -84,7 +103,7 @@ document.getElementById('addItem').addEventListener('click', (event) => {
 })
 
 document.addEventListener('click', (event) => {
-  // contains lets us check to see if a class list contins the class list 'mark done'
+  // contains lets us check to see if a class list contains the class list 'mark done'
   // console.log(event.target.classList.contains('markDone'))
 
   // 
