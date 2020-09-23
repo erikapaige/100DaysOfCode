@@ -1,4 +1,5 @@
 // ==== FUNCTIONS FOR FORM / USER NAME ==== //
+
 document.getElementById('submit').addEventListener('click', (event) => {
   event.preventDefault()
   // set item in local storage, set item called name to be the value of the input
@@ -8,6 +9,13 @@ document.getElementById('submit').addEventListener('click', (event) => {
   document.getElementById('name').value = ''
 })
 
+// remove item from local storage
+// 1. add a button with id of removeItem
+// 2. write JS script below
+// document.getElementById('removeItem').addEventListener('click', () =>{
+//   localStorage.removeItem('name')
+// })
+
 //UPON PAGE LOAD, check to see if there is value before setting text content
 // if localStorage with key of name exists run function, if not leave blank
 if (localStorage.getItem('name')) {
@@ -15,8 +23,8 @@ if (localStorage.getItem('name')) {
 }
 
 
-
 // ==== FUNCTIONS FOR TO DO LIST ==== //
+
 // array on item
 const items = [
   {
