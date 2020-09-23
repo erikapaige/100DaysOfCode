@@ -1,0 +1,78 @@
+/*============= Body Reset =============*/
+
+h1 {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif !important;
+  color: #2b2b2b!important;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  color: #636363;
+}
+
+/*============= Heading =============*/
+
+h1 {
+  size: 16rem!important;
+}
+
+.border-top {
+  color: rgba(177, 103, 206, 0.548)!important;
+}
+
+/*============= Body =============*/
+
+.markDone {
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+/*============= Footer =============*/
+
+footer {
+  background-color: #383838;
+  padding: 1rem 2rem 3rem;
+  margin-bottom: 0px;
+}
+
+footer p, footer a {
+  color: white;
+  text-decoration: none;
+}
+
+ul.social {
+  list-style-type: none;
+  display: flex;
+  max-width: 16rem;
+  padding: 0;
+  margin: 0 auto;
+}
+
+ul.social li {
+  margin: 0 auto;
+  padding: 0;
+}
+
+footer .svg-inline--fa {
+  font-size: 2.3rem;
+}
+
+footer.sv-inline--fa:hover {
+  color: rgba(177, 103, 206, 0.548)!important;
+}
+
+/*============= SOCKET =============*/
+
+.socket {
+  background-color: #222222;
+  border-top: .1rem solid #4981b3;
+}
+
+/*-- Bootstrap Mobile Gutter Fix --*/
+
+.row, .container-fluid {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
